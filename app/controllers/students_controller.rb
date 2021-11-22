@@ -5,14 +5,17 @@ class StudentsController < ApplicationController
     end
 
     def grades 
-    students_grades = Student.all
-    render json: students_grades.order(:grade)
+    students_grades = Student.all.order(:grade)
+    new_data =  students_grades.map do |testing|
+        testing.grade
+    end
+    new_data 
     end
 
     def highest_grade
     highest_grades = Student.all
     new_best = highest_grades.max do |testing|
-       testing.grade 
+       testing.grade
     end
     render json: new_best
  
