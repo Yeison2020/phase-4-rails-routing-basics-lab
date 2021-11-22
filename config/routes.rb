@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   # Get request for localhost:3000/students/grades
   get "/students/grades", to:"students#grades"
 
-
   # Get request for localhost:3000/students/highest-grade
 
   get "/students/highest-grade", to:"students#highest_grade"
